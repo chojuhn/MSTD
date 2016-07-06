@@ -1,4 +1,4 @@
-package kscc.com.gateway.vo;
+package kscc.com.gateway.usr.vo;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
