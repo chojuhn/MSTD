@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="interceptorStdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm} %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+    <appender name="interceptorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    	<file>D:/stdmbl_gw_log/interceptor.log</file>
+    	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+    		<fileNamePattern>interceptor.%d{yyyy-MM-dd}.log</fileNamePattern>
+    		<maxHistory>5</maxHistory>
+    	</rollingPolicy>
+    	<encoder>
+    		<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    	</encoder>
+    </appender>
+    
+    <appender name="commonStdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm} %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+    <appender name="commonFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    	<file>D:/stdmbl_gw_log/gw-webapp.log</file>
+    	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+    		<fileNamePattern>gw-webapp.%d{yyyy-MM-dd}.log</fileNamePattern>
+    		<maxHistory>5</maxHistory>
+    	</rollingPolicy>
+    	<encoder>
+    		<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    	</encoder>
+    </appender>
+
+    <logger name="kscc.com.gateway.interceptor" level="debug"/>
+    <logger name="org.springframework" level="info" />
+
+    <root level="info">
+        <appender-ref ref="commonStdout" />
+        <appender-ref ref="commonFile" />
+    </root>
+    <root level="debug">
+        <appender-ref ref="interceptorStdout" />
+        <appender-ref ref="interceptorFile" />
+    </root>
+</configuration>

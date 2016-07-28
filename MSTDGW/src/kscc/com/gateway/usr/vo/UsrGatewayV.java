@@ -9,20 +9,19 @@ public class UsrGatewayV {
 	
 	@NotNull
 	@NotEmpty
-	private String usrName;
+	private String name;
 	
 	@NotNull
 	@Size(min=2, max=10)
 	private String deptName;
 	
-	private String phoneNum;
-	
-	
-	public String getUsrName() {
-		return usrName;
+	private String phoneNumber;
+
+	public String getName() {
+		return name;
 	}
-	public void setUsrName(String usrName) {
-		this.usrName = usrName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getDeptName() {
 		return deptName;
@@ -30,11 +29,12 @@ public class UsrGatewayV {
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 	}
-	public String getPhoneNum() {
-		return phoneNum;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setPhoneNum(String phoneNum) {
-		this.phoneNum = phoneNum;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
+
 	
 }
